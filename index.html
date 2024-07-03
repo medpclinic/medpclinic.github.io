@@ -1,0 +1,325 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Diagnosis of Iron Deficiency</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			color: #3C3C3B;
+			font-size: 16px;
+			background-image: url('bg.png');
+			background-size: cover;
+			background-position: center;
+			background-position-y: 0;
+			background-repeat: no-repeat; /* не повторять картинку */
+		}
+
+		form {
+			background-color: rgba(255, 255, 255, 0.9);
+			background-image: linear-gradient(0deg, rgba(60, 60, 59, 0.06), rgba(60, 60, 59, 0.06)), none;
+			padding: 15px;
+			margin: 15px;
+		}
+
+		table {
+			width: 100%;
+		}
+
+		th, td {
+			padding: 8px 12px;
+			border: 1px solid #3C3C3B;
+		}
+
+
+		th, td {
+			text-align: left;
+			width: 200px;
+		}
+
+			th.radio, td.radio {
+				text-align: center;
+				width: 100px;
+				max-width: 100px;
+			}
+
+			td.number {
+				text-align: center;
+				width: 20px;
+			}
+
+		th {
+			background-color: #f4f4f4;
+		}
+
+		.center {
+			text-align: center;
+		}
+
+		.button {
+			margin-top: 20px;
+			padding: 10px 20px;
+			background-color: #3C3C3B;
+			color: white;
+			border: none;
+			cursor: pointer;
+		}
+
+		.language-switch {
+			margin-top: 20px;
+			margin-left: 5px;
+		}
+
+			.language-switch button {
+				margin: 10px 10px;
+				padding: 10px 20px;
+				background-color: #D1B694;
+				color: #3C3C3B;
+				font-size: large;
+				border: none;
+				cursor: pointer;
+			}
+
+		input {
+			cursor: pointer;
+		}
+		.center {
+			text-align: center;
+		}
+
+		.form-header {
+			background-color: #3C3C3B;
+			margin: 15px;
+			height: 220px;
+		}
+
+		.language-switch img {
+			float: right;
+			margin: 20px;
+		}
+	</style>
+	<script>
+		function switchLanguage(lang) {
+			const elements = document.querySelectorAll("[data-lang]");
+			elements.forEach(element => {
+				element.style.display = element.dataset.lang === lang ? 'block' : 'none';
+			});
+		}
+
+		function calculateResult(event) {
+			event.preventDefault();
+			const form = document.getElementById('diagnosisForm');
+			const formData = new FormData(form);
+			let totalScore = 0;
+			for (let value of formData.values()) {
+				totalScore += parseInt(value);
+			}
+
+			const result = document.getElementById('result');
+			if (totalScore <= 10) {
+				result.textContent = totalScore + ' - Поздравляем! У вас достаточный уровень железа.';
+			} else {
+				result.textContent = totalScore + ' - К сожалению, у вас, вероятно, дефицит железа. Рекомендуем обратиться к врачу.';
+			}
+		}
+
+		function calculateResultEn() {
+			const form = document.getElementById('diagnosisForm');
+			const formData = new FormData(form);
+			let totalScore = 0;
+			for (let value of formData.values()) {
+				totalScore += parseInt(value);
+			}
+
+			const result = document.getElementById('result');
+			if (totalScore <= 10) {
+				result.textContent = totalScore + ' - Сongratulations! You have sufficient iron levels.';
+			} else {
+				result.textContent = totalScore + ' - Unfortunately, you probably have an iron deficiency. You should pay more attention to your health and, if possible, consult a doctor and undergo additional examination.';
+			}
+		}
+	</script>
+</head>
+<body onload="switchLanguage('ru')">
+	<div>
+		<div class="form-header">
+			<div class="language-switch">
+				<button onclick="switchLanguage('en')">English</button>
+				<button onclick="switchLanguage('ru')">Русский</button>
+				<img src="logo.png" alt="Logo" width="612" height="176">
+			</div>
+		</div>
+		<form id="diagnosisForm" onsubmit="calculateResult(event)">
+			<div class="center">
+				<h2 data-lang="en">Diagnosis of Iron Deficiency</h2>
+				<h2 data-lang="ru">Диагностика железодефицита</h2>
+			</div>
+			<table style="radio-container" cellpadding="0" cellspacing="0">
+				<tbody>
+					<tr>
+						<td class="number">
+							<span data-lang="en">#</span>
+							<span data-lang="ru">№</span>
+						</td>
+						<td>
+							<span data-lang="en">Symptoms</span>
+							<span data-lang="ru">Симптомы</span>
+						</td>
+						<td class="radio">
+							<span data-lang="en">No (0 points)</span>
+							<span data-lang="ru">Нет (0 баллов)</span>
+						</td>
+						<td class="radio">
+							<span data-lang="en">Rarely/Mild (1 point)</span>
+							<span data-lang="ru">Редко/Слабо (1 балл)</span>
+						</td>
+						<td class="radio">
+							<span data-lang="en">Occasionally/Tolerable (2 points)</span>
+							<span data-lang="ru">Периодически/Терпимо (2 балла)</span>
+						</td>
+						<td class="radio">
+							<span data-lang="en">Often/Moderate (3 points)</span>
+							<span data-lang="ru">Часто/Умеренно (3 балла)</span>
+						</td>
+						<td class="radio">
+							<span data-lang="en">Always/Severe (4 points)</span>
+							<span data-lang="ru">Постоянно/Выраженно (4 балла)</span>
+						</td>
+					</tr>
+					<!-- Repeat the following rows for all symptoms -->
+					<tr>
+						<td class="number">1</td>
+						<td>
+							<span data-lang="en">Weakness, increased fatigue</span>
+							<span data-lang="ru">Слабость, повышенная утомляемость</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom1" class="radio-btn" value="0" required></td>
+						<td class="radio"><input type="radio" name="symptom1" class="radio-btn" value="1"></td>
+						<td class="radio"><input type="radio" name="symptom1" class="radio-btn" value="2"></td>
+						<td class="radio"><input type="radio" name="symptom1" class="radio-btn" value="3"></td>
+						<td class="radio"><input type="radio" name="symptom1" class="radio-btn" value="4"></td>
+					</tr>
+					<!-- Add other symptoms here in the same format -->
+					<!-- Example of adding another symptom -->
+					<tr>
+						<td class="number">2</td>
+						<td>
+							<span data-lang="en">Irritability, psychological lability</span>
+							<span data-lang="ru">Раздражительность, психологическая лабильность</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom2" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom2" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom2" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom2" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom2" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td class="number">3</td>
+						<td>
+							<span data-lang="en">Lack of concentration</span>
+							<span data-lang="ru">Отсутствие концентрации</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom3" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom3" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom3" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom3" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom3" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td class="number">4</td>
+						<td>
+							<span data-lang="en">Depressed mood</span>
+							<span data-lang="ru">Угнетенное настроение</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom4" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom4" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom4" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom4" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom4" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td class="number">5</td>
+						<td>
+							<span data-lang="en">Decreased ability to work, decreased tolerance to physical activity</span>
+							<span data-lang="ru">Уменьшенная работоспособность, сниженная толерантность к физической активности</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom5" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom5" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom5" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom5" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom5" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td class="number">6</td>
+						<td>
+							<span data-lang="en">Daytime sleepiness</span>
+							<span data-lang="ru">Дневная сонливость</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom6" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom6" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom6" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom6" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom6" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td class="number">7</td>
+						<td>
+							<span data-lang="en">Headaches in the morning</span>
+							<span data-lang="ru">Головные боли по утрам</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom7" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom7" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom7" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom7" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom7" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td class="number">8</td>
+						<td>
+							<span data-lang="en">Hypotension, dizziness, tinnitus, tendency to faint in a stuffy environment</span>
+							<span data-lang="ru">Раздражительность, психологическая лабильность</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom8" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom8" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom8" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom8" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom8" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td class="number">9</td>
+						<td>
+							<span data-lang="en">Decreased appetite</span>
+							<span data-lang="ru">Раздражительность, психологическая лабильность</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom9" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom9" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom9" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom9" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom9" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td class="number">10</td>
+						<td>
+							<span data-lang="en">Aversion to certain foods (meat, chocolate, sweets, honey) and non-food substances (clay, wool)</span>
+							<span data-lang="ru">Раздражительность, психологическая лабильность</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom10" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom10" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom10" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom10" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom10" value="4" class="radio-btn"></td>
+					</tr>
+					<!-- Repeat the above block for all other symptoms from the document -->
+				</tbody>
+			</table>
+			<div class="center" data-lang="en">
+				<button type="submit" class="button">Result</button>
+			</div>
+
+			<div class="center" data-lang="ru">
+				<button type="submit" class="button">Результат</button>
+			</div>
+			<div id="result" class="center" style="margin-top: 20px;"></div>
+		</form>
+	</div>
+</body>
+</html>
