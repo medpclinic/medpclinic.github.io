@@ -57,10 +57,11 @@
 
 		.button {
 			margin-top: 20px;
-			padding: 10px 20px;
+			padding: 15px 30px;
 			background-color: #3C3C3B;
-			color: white;
+			color: #D1B694;
 			border: none;
+			font-size: large;
 			cursor: pointer;
 		}
 
@@ -79,9 +80,14 @@
 				cursor: pointer;
 			}
 
+		h2 {
+			color: #3C3C3B;
+		}
+
 		input {
 			cursor: pointer;
 		}
+
 		.center {
 			text-align: center;
 		}
@@ -89,12 +95,12 @@
 		.form-header {
 			background-color: #3C3C3B;
 			margin: 15px;
-			height: 220px;
+			height: 180px;
 		}
 
 		.language-switch img {
 			float: right;
-			margin: 20px;
+			margin: 10px;
 		}
 	</style>
 	<script>
@@ -145,7 +151,7 @@
 			<div class="language-switch">
 				<button onclick="switchLanguage('en')">English</button>
 				<button onclick="switchLanguage('ru')">Русский</button>
-				<img src="logo.png" alt="Logo" width="612" height="176">
+				<img src="logo.png" alt="Logo" width="306" height="88">
 			</div>
 		</div>
 		<form id="diagnosisForm" onsubmit="calculateResult(event)">
