@@ -19,6 +19,41 @@
 			*/
 		}
 
+		input[type="radio"] {
+			background-image: url(radio-off.png);
+			height: 40px;
+			width: 40px;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 1px hsla(0,0%,100%,.8),
+                0 0 0 1px hsla(0,0%,0%,.6),
+                0 2px 3px hsla(0,0%,0%,.6),
+                0 4px 3px hsla(0,0%,0%,.4),
+                0 6px 6px hsla(0,0%,0%,.2),
+                0 10px 6px hsla(0,0%,0%,.2);
+    cursor: pointer;
+    display: inline-block;
+  
+    margin-right: 15px;
+    position: relative;
+
+    -webkit-appearance: none;
+}
+input[type="radio"] {
+	background-image: url(radio-off.png);
+			height: 40px;
+			width: 40px;
+}
+input[type="radio"]:checked {
+	background-image: url(radio-on.png);
+			height: 40px;
+			width: 40px;
+    box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.4),
+                inset 0 2px 2px hsla(0,0%,100%,.4),
+                0 1px 1px hsla(0,0%,100%,.8),
+                0 0 2px 2px hsla(0,70%,70%,.4);
+}
+
+
 		form {
 			/*background-color: rgba(255, 255, 255, 0.9);
 			background-image: linear-gradient(0deg, rgba(60, 60, 59, 0.06), rgba(60, 60, 59, 0.06)), none;*/
@@ -32,7 +67,7 @@
 
 		th, td {
 			padding: 8px 12px;
-			border: 1px solid #D1B694;
+			border-bottom: 1px solid #D1B694;
 		}
 
 
@@ -61,6 +96,7 @@
 		}
 
 		.button {
+			border-radius: 10px;
 			margin-top: 20px;
 			padding: 15px 30px;
 			background-color: #D1B694;
@@ -76,6 +112,7 @@
 		}
 
 			.language-switch button {
+				border-radius: 10px;
 				margin: 10px 10px;
 				padding: 10px 20px;
 				background-color: #D1B694;
@@ -109,11 +146,13 @@
 		}
 	</style>
 	<script>
+		var language;
 		function switchLanguage(lang) {
 			const elements = document.querySelectorAll("[data-lang]");
 			elements.forEach(element => {
 				element.style.display = element.dataset.lang === lang ? 'block' : 'none';
 			});
+			language = lang;
 		}
 
 		function calculateResult(event) {
@@ -127,27 +166,24 @@
 
 			const result = document.getElementById('result');
 			if (totalScore <= 10) {
-				result.textContent = totalScore + ' - Поздравляем! У вас достаточный уровень железа.';
+				if (language != "en")
+				{
+					result.textContent = totalScore + ' - Поздравляем! У вас достаточный уровень железа.';
+				}else
+				{
+					result.textContent = totalScore + ' - Сongratulations! You have sufficient iron levels.';
+				}
 			} else {
+				if (language != "en")
+				{
 				result.textContent = totalScore + ' - К сожалению, у вас, вероятно, дефицит железа. Рекомендуем обратиться к врачу.';
+				}else
+				{
+					result.textContent = totalScore + ' - Unfortunately, you probably have an iron deficiency. You should pay more attention to your health and, if possible, consult a doctor and undergo additional examination.';			
+				}
 			}
 		}
 
-		function calculateResultEn() {
-			const form = document.getElementById('diagnosisForm');
-			const formData = new FormData(form);
-			let totalScore = 0;
-			for (let value of formData.values()) {
-				totalScore += parseInt(value);
-			}
-
-			const result = document.getElementById('result');
-			if (totalScore <= 10) {
-				result.textContent = totalScore + ' - Сongratulations! You have sufficient iron levels.';
-			} else {
-				result.textContent = totalScore + ' - Unfortunately, you probably have an iron deficiency. You should pay more attention to your health and, if possible, consult a doctor and undergo additional examination.';
-			}
-		}
 	</script>
 </head>
 <body onload="switchLanguage('ru')">
@@ -181,19 +217,19 @@
 						</td>
 						<td class="radio">
 							<span data-lang="en">Rarely/Mild (1 point)</span>
-							<span data-lang="ru">Редко/Слабо (1 балл)</span>
+							<span data-lang="ru">Редко / Слабо (1 балл)</span>
 						</td>
 						<td class="radio">
 							<span data-lang="en">Occasionally/Tolerable (2 points)</span>
-							<span data-lang="ru">Периодически/Терпимо (2 балла)</span>
+							<span data-lang="ru">Периодически / Терпимо (2 балла)</span>
 						</td>
 						<td class="radio">
 							<span data-lang="en">Often/Moderate (3 points)</span>
-							<span data-lang="ru">Часто/Умеренно (3 балла)</span>
+							<span data-lang="ru">Часто / Умеренно (3 балла)</span>
 						</td>
 						<td class="radio">
 							<span data-lang="en">Always/Severe (4 points)</span>
-							<span data-lang="ru">Постоянно/Выраженно (4 балла)</span>
+							<span data-lang="ru">Постоянно / Выраженно (4 балла)</span>
 						</td>
 					</tr>
 					<!-- Repeat the following rows for all symptoms -->
@@ -287,7 +323,7 @@
 						<td class="number">8</td>
 						<td>
 							<span data-lang="en">Hypotension, dizziness, tinnitus, tendency to faint in a stuffy environment</span>
-							<span data-lang="ru">Раздражительность, психологическая лабильность</span>
+							<span data-lang="ru">Гипотония, головокружение, звон в ушах, склонность к обморокам в душном помещении</span>
 						</td>
 						<td class="radio"><input type="radio" name="symptom8" value="0" class="radio-btn" required></td>
 						<td class="radio"><input type="radio" name="symptom8" value="1" class="radio-btn"></td>
@@ -299,7 +335,7 @@
 						<td class="number">9</td>
 						<td>
 							<span data-lang="en">Decreased appetite</span>
-							<span data-lang="ru">Раздражительность, психологическая лабильность</span>
+							<span data-lang="ru">Уменьшенный аппетит</span>
 						</td>
 						<td class="radio"><input type="radio" name="symptom9" value="0" class="radio-btn" required></td>
 						<td class="radio"><input type="radio" name="symptom9" value="1" class="radio-btn"></td>
@@ -311,7 +347,7 @@
 						<td class="number">10</td>
 						<td>
 							<span data-lang="en">Aversion to certain foods (meat, chocolate, sweets, honey) and non-food substances (clay, wool)</span>
-							<span data-lang="ru">Раздражительность, психологическая лабильность</span>
+							<span data-lang="ru">Отвращение к определённым продуктам питания (мясу, шоколаду, сладостям, мёду) и неедобным веществам (глине, шерсти)</span>
 						</td>
 						<td class="radio"><input type="radio" name="symptom10" value="0" class="radio-btn" required></td>
 						<td class="radio"><input type="radio" name="symptom10" value="1" class="radio-btn"></td>
