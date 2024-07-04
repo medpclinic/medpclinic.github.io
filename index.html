@@ -4,146 +4,115 @@
 	<title>Diagnosis of Iron Deficiency</title>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-	<style>
-		body {
+<style>
+	body {
 			font-family: 'Montserrat', sans-serif;
 			color: #D1B694;
 			font-size: 16px;
 			background-color: #3C3C3B ;
-			/*
-			background-image: url('bg.png');
-			background-size: cover;
-			background-position: center;
-			background-position-y: 0;
-			background-repeat: no-repeat;
-			*/
-		}
-
-		input[type="radio"] {
+	}
+	input[type="radio"] {
 			background-image: url(radio-off.png);
 			background-position: center;
 			background-repeat: no-repeat;
 			height: 50px;
 			width: 50px;
-    border-radius: 10px;
-    box-shadow: inset 0 1px 1px hsla(0,0%,100%,.8),
+    		border-radius: 10px;
+    		box-shadow: inset 0 1px 1px hsla(0,0%,100%,.8),
                 0 0 0 1px hsla(0,0%,0%,.6),
                 0 2px 3px hsla(0,0%,0%,.6),
                 0 4px 3px hsla(0,0%,0%,.4),
                 0 6px 6px hsla(0,0%,0%,.2),
                 0 10px 6px hsla(0,0%,0%,.2);
-    cursor: pointer;
-    display: inline-block;
-  
-    margin-right: 15px;
-    position: relative;
-
-    -webkit-appearance: none;
-}
-input[type="radio"] {
-	background-image: url(radio-off.png);
-;
-}
-input[type="radio"]:checked {
-	background-image: url(radio-on.png);
-    box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.4),
+    		cursor: pointer;
+    		display: inline-block;
+    		margin-right: 15px;
+    		position: relative;
+    		-webkit-appearance: none;
+	}
+	input[type="radio"] {
+		background-image: url(radio-off.png);
+	}
+	input[type="radio"]:checked {
+		background-image: url(radio-on.png);
+    	box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.4),
                 inset 0 2px 2px hsla(0,0%,100%,.4),
                 0 1px 1px hsla(0,0%,100%,.8),
                 0 0 2px 2px hsla(0,70%,70%,.4);
-}
-
-
-		form {
-			/*background-color: rgba(255, 255, 255, 0.9);
-			background-image: linear-gradient(0deg, rgba(60, 60, 59, 0.06), rgba(60, 60, 59, 0.06)), none;*/
-			padding: 15px;
-			margin: 15px;
-		}
-
-		table {
-			width: 100%;
-		}
-
-		th, td {
-			padding: 8px 12px;
-			border-bottom: 1px solid #D1B694;
-		}
-
-
-		th, td {
-			text-align: left;
-			width: 200px;
-		}
-
-			th.radio, td.radio {
-				text-align: center;
-				width: 100px;
-				max-width: 100px;
-			}
-
-			td.number {
-				text-align: center;
-				width: 20px;
-			}
-
-		th {
-			background-color: #f4f4f4;
-		}
-
-		.center {
-			text-align: center;
-		}
-
-		.button {
-			border-radius: 10px;
-			margin-top: 20px;
-			padding: 15px 30px;
-			background-color: #D1B694;
-			color: #3C3C3B;
-			border: none;
-			font-size: large;
-			cursor: pointer;
-		}
-
-		.language-switch {
-			margin-top: 20px;
-			margin-left: 5px;
-		}
-
-			.language-switch button {
-				border-radius: 10px;
-				margin: 10px 10px;
-				padding: 10px 20px;
-				background-color: #D1B694;
-				color: #3C3C3B;
-				font-size: large;
-				border: none;
-				cursor: pointer;
-			}
-
-		h2 {
-			color: #D1B694;
-		}
-
-		input {
-			cursor: pointer;
-		}
-
-		.center {
-			text-align: center;
-		}
-
-		.form-header {
-			background-color: #3C3C3B;
-			margin: 15px;
-			height: 180px;
-		}
-
-		.language-switch img {
-			float: right;
-			margin: 10px;
-		}
-	</style>
+	}
+	form {
+		padding: 15px;
+		margin: 15px;
+	}
+	table {
+		width: 100%;
+	}
+	th, td {
+		padding: 8px 12px;
+		border-bottom: 1px solid #D1B694;
+	}
+	th, td {
+		text-align: left;
+		width: 200px;
+	}
+	th.radio, td.radio {
+		text-align: center;
+		width: 100px;
+		max-width: 100px;
+	}
+	td.number {
+		text-align: center;
+		width: 20px;
+	}
+	th {
+		background-color: #f4f4f4;
+	}
+	.center {
+		text-align: center;
+	}
+	.button {
+		border-radius: 10px;
+		margin-top: 20px;
+		padding: 15px 30px;
+		background-color: #D1B694;
+		color: #3C3C3B;
+		border: none;
+		font-size: large;
+		cursor: pointer;
+	}
+	.language-switch {
+		margin-top: 20px;
+		margin-left: 5px;
+	}
+	.language-switch button {
+		border-radius: 10px;
+		margin: 10px 10px;
+		padding: 10px 20px;
+		background-color: #D1B694;
+		color: #3C3C3B;
+		font-size: large;
+		border: none;
+		cursor: pointer;
+	}
+	h2 {
+		color: #D1B694;
+	}
+	input {
+		cursor: pointer;
+	}
+	.center {
+		text-align: center;
+	}
+	.form-header {
+		background-color: #3C3C3B;
+		margin: 15px;
+		height: 130px;
+	}
+	.language-switch img {
+		float: right;
+		margin: 10px;
+	}
+</style>
 	<script>
 		var language;
 		function switchLanguage(lang) {
@@ -175,7 +144,7 @@ input[type="radio"]:checked {
 			} else {
 				if (language != "en")
 				{
-				result.textContent = totalScore + ' - К сожалению, у вас, вероятно, дефицит железа. Рекомендуем обратиться к врачу.';
+				result.textContent = totalScore + ' - К сожалению, у вас, вероятно, дефицит железа. Вам стоит обратиться к врачу.';
 				}else
 				{
 					result.textContent = totalScore + ' - Unfortunately, you probably have an iron deficiency. You should pay more attention to your health and, if possible, consult a doctor and undergo additional examination.';			
@@ -202,38 +171,32 @@ input[type="radio"]:checked {
 			<table style="radio-container" cellpadding="0" cellspacing="0">
 				<tbody>
 					<tr>
-						<td class="number">
-							<span data-lang="en">#</span>
-							<span data-lang="ru">№</span>
-						</td>
 						<td>
 							<span data-lang="en">Symptoms</span>
 							<span data-lang="ru">Симптомы</span>
 						</td>
 						<td class="radio">
-							<span data-lang="en">No (0 points)</span>
-							<span data-lang="ru">Нет (0 баллов)</span>
+							<span data-lang="en">No</span>
+							<span data-lang="ru">Нет</span>
 						</td>
 						<td class="radio">
-							<span data-lang="en">Rarely/Mild (1 point)</span>
-							<span data-lang="ru">Редко / Слабо (1 балл)</span>
+							<span data-lang="en">Rarely / Mild</span>
+							<span data-lang="ru">Редко / Слабо</span>
 						</td>
 						<td class="radio">
-							<span data-lang="en">Occasionally/Tolerable (2 points)</span>
-							<span data-lang="ru">Периодически / Терпимо (2 балла)</span>
+							<span data-lang="en">Occasionally / Tolerable</span>
+							<span data-lang="ru">Периодически / Терпимо</span>
 						</td>
 						<td class="radio">
-							<span data-lang="en">Often/Moderate (3 points)</span>
-							<span data-lang="ru">Часто / Умеренно (3 балла)</span>
+							<span data-lang="en">Often / Moderate</span>
+							<span data-lang="ru">Часто / Умеренно</span>
 						</td>
 						<td class="radio">
-							<span data-lang="en">Always/Severe (4 points)</span>
-							<span data-lang="ru">Постоянно / Выраженно (4 балла)</span>
+							<span data-lang="en">Always / Severe</span>
+							<span data-lang="ru">Постоянно / Выраженно</span>
 						</td>
 					</tr>
-					<!-- Repeat the following rows for all symptoms -->
 					<tr>
-						<td class="number">1</td>
 						<td>
 							<span data-lang="en">Weakness, increased fatigue</span>
 							<span data-lang="ru">Слабость, повышенная утомляемость</span>
@@ -244,10 +207,7 @@ input[type="radio"]:checked {
 						<td class="radio"><input type="radio" name="symptom1" class="radio-btn" value="3"></td>
 						<td class="radio"><input type="radio" name="symptom1" class="radio-btn" value="4"></td>
 					</tr>
-					<!-- Add other symptoms here in the same format -->
-					<!-- Example of adding another symptom -->
 					<tr>
-						<td class="number">2</td>
 						<td>
 							<span data-lang="en">Irritability, psychological lability</span>
 							<span data-lang="ru">Раздражительность, психологическая лабильность</span>
@@ -259,7 +219,6 @@ input[type="radio"]:checked {
 						<td class="radio"><input type="radio" name="symptom2" value="4" class="radio-btn"></td>
 					</tr>
 					<tr>
-						<td class="number">3</td>
 						<td>
 							<span data-lang="en">Lack of concentration</span>
 							<span data-lang="ru">Отсутствие концентрации</span>
@@ -271,7 +230,6 @@ input[type="radio"]:checked {
 						<td class="radio"><input type="radio" name="symptom3" value="4" class="radio-btn"></td>
 					</tr>
 					<tr>
-						<td class="number">4</td>
 						<td>
 							<span data-lang="en">Depressed mood</span>
 							<span data-lang="ru">Угнетенное настроение</span>
@@ -283,7 +241,6 @@ input[type="radio"]:checked {
 						<td class="radio"><input type="radio" name="symptom4" value="4" class="radio-btn"></td>
 					</tr>
 					<tr>
-						<td class="number">5</td>
 						<td>
 							<span data-lang="en">Decreased ability to work, decreased tolerance to physical activity</span>
 							<span data-lang="ru">Уменьшенная работоспособность, сниженная толерантность к физической активности</span>
@@ -295,7 +252,6 @@ input[type="radio"]:checked {
 						<td class="radio"><input type="radio" name="symptom5" value="4" class="radio-btn"></td>
 					</tr>
 					<tr>
-						<td class="number">6</td>
 						<td>
 							<span data-lang="en">Daytime sleepiness</span>
 							<span data-lang="ru">Дневная сонливость</span>
@@ -307,7 +263,6 @@ input[type="radio"]:checked {
 						<td class="radio"><input type="radio" name="symptom6" value="4" class="radio-btn"></td>
 					</tr>
 					<tr>
-						<td class="number">7</td>
 						<td>
 							<span data-lang="en">Headaches in the morning</span>
 							<span data-lang="ru">Головные боли по утрам</span>
@@ -319,7 +274,6 @@ input[type="radio"]:checked {
 						<td class="radio"><input type="radio" name="symptom7" value="4" class="radio-btn"></td>
 					</tr>
 					<tr>
-						<td class="number">8</td>
 						<td>
 							<span data-lang="en">Hypotension, dizziness, tinnitus, tendency to faint in a stuffy environment</span>
 							<span data-lang="ru">Гипотония, головокружение, звон в ушах, склонность к обморокам в душном помещении</span>
@@ -331,7 +285,6 @@ input[type="radio"]:checked {
 						<td class="radio"><input type="radio" name="symptom8" value="4" class="radio-btn"></td>
 					</tr>
 					<tr>
-						<td class="number">9</td>
 						<td>
 							<span data-lang="en">Decreased appetite</span>
 							<span data-lang="ru">Уменьшенный аппетит</span>
@@ -343,16 +296,213 @@ input[type="radio"]:checked {
 						<td class="radio"><input type="radio" name="symptom9" value="4" class="radio-btn"></td>
 					</tr>
 					<tr>
-						<td class="number">10</td>
 						<td>
 							<span data-lang="en">Aversion to certain foods (meat, chocolate, sweets, honey) and non-food substances (clay, wool)</span>
-							<span data-lang="ru">Отвращение к определённым продуктам питания (мясу, шоколаду, сладостям, мёду) и неедобным веществам (глине, шерсти)</span>
+							<span data-lang="ru">Отвращение к определённым продуктам питания (мясу, шоколаду, сладостям, мёду) и несъедобным веществам (глине, шерсти)</span>
 						</td>
 						<td class="radio"><input type="radio" name="symptom10" value="0" class="radio-btn" required></td>
 						<td class="radio"><input type="radio" name="symptom10" value="1" class="radio-btn"></td>
 						<td class="radio"><input type="radio" name="symptom10" value="2" class="radio-btn"></td>
 						<td class="radio"><input type="radio" name="symptom10" value="3" class="radio-btn"></td>
 						<td class="radio"><input type="radio" name="symptom10" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td>
+							<span data-lang="en">Perversion of taste - an irresistible desire to eat something unusual (dental powder, chalk, clay, sand, minced meat, cereal)</span>
+							<span data-lang="ru">Извращение вкуса - непреодолимое желание съесть что-то необычное (зубной порошок, мел, глина, песок, фарш, крупа)</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom11" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom11" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom11" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom11" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom11" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td>
+							<span data-lang="en">Perversion of smell - addiction to smells (gasoline, kerosene, acetone, the smell of varnishes, paints)</span>
+							<span data-lang="ru">Извращение обоняния - пристрастие к запахам (бензин, керосин, ацетон, запах лаков, красок)</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom12" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom12" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom12" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom12" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom12" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td>
+							<span data-lang="en">Heaviness in the lower back/pain at the end of the working day</span>
+							<span data-lang="ru">Тяжесть в пояснице/боль в конце рабочего дня</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom13" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom13" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom13" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom13" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom13" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td>
+							<span data-lang="en">An involuntary urge to move your legs before falling asleep</span>
+							<span data-lang="ru">Непроизвольное желание двигать ногами перед засыпанием</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom14" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom14" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom14" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom14" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom14" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td>
+							<span data-lang="en">Increased susceptibility to infections (herpes, furunculosis, STIs, frequent acute respiratory viral infections, acute respiratory infections)</span>
+							<span data-lang="ru">Повышенная восприимчивость к инфекциям (герпес, фурункулёз, ИППП, частые ОРВИ, ОРЗ)</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom15" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom15" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom15" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom15" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom15" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td>
+							<span data-lang="en">Heavy menstrual blood loss * ONLY FOR WOMEN!</span>
+							<span data-lang="ru">Обильная менструальная кровопотеря * ТОЛЬКО ДЛЯ ЖЕНЩИН!</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom16" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom16" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom16" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom16" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom16" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td>
+							<span data-lang="en">Shortness of breath and palpitations during normal physical activity</span>
+							<span data-lang="ru">Одышка и учащенное сердцебиение при нормальной физической активности</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom17" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom17" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom17" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom17" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom17" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td>
+							<span data-lang="en">Coldness of hands, feet, unmotivated low-grade fever</span>
+							<span data-lang="ru">Ощущение холода в руках и ногах, немотивированная субфебрильная температура</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom18" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom18" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom18" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom18" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom18" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td>
+							<span data-lang="en">Dry skin, flaking, dry elbows, cracked skin on heels, fingers, localized or generalized skin itching, brown spots on the back of the hands and face</span>
+							<span data-lang="ru">Сухость кожи, шелушение, сухость локтей, трещины на коже пяток и пальцев, локализованный или генерализованный кожный зуд, коричневые пятна на тыльной стороне кистей и лица</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom19" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom19" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom19" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom19" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom19" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td>
+							<span data-lang="en">Stomatitis - cracks, «jams» in the corners of the mouth; glossitis - a feeling of fullness, pain in the tongue, redness of its tip, «varnished», «geographical tongue»; cheilitis - redness, peeling, swelling of the lips; periodontal disease, caries</span>
+							<span data-lang="ru">Стоматит - трещины, «заеды» в уголках рта; глоссит - чувство наполненности, боль в языке, покраснение его кончика, «лаковый», «географический язык»; хейлит - покраснение, шелушение, отек губ; пародонтоз, кариес</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom20" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom20" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom20" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom20" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom20" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td>
+							<span data-lang="en">Brittleness, dullness, thinning and striation of nails, spoon-shaped concavity of nails</span>
+							<span data-lang="ru">Ломкость, тусклость, истончение и бороздчатость ногтей, ложкообразная вогнутость ногтей</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom21" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom21" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom21" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom21" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom21" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td>
+							<span data-lang="en">Dullness, fragility, hair loss, early gray hair</span>
+							<span data-lang="ru">Тусклость, ломкость, выпадение волос, ранняя седина</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom22" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom22" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom22" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom22" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom22" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td>
+							<span data-lang="en">A bluish tint to the sclera (the white of the eye)</span>
+							<span data-lang="ru">Синеватый оттенок склер (белок глаза)</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom23" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom23" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom23" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom23" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom23" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td>
+							<span data-lang="en">Decreased visual acuity in the dark</span>
+							<span data-lang="ru">Снижение остроты зрения в темноте</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom24" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom24" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom24" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom24" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom24" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td>
+							<span data-lang="en">Difficulty swallowing solid foods, tablets, capsules</span>
+							<span data-lang="ru">Затруднение глотания твердой пищи, таблеток, капсул</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom25" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom25" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom25" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom25" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom25" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td>
+							<span data-lang="en">Decreased muscle tone, muscle weakness</span>
+							<span data-lang="ru">Снижение мышечного тонуса, мышечная слабость</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom26" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom26" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom26" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom26" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom26" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td>
+							<span data-lang="en">Urinary urgency, urinary incontinence when laughing and sneezing, nocturnal urge to urinate</span>
+							<span data-lang="ru">Позывы к мочеиспусканию, недержание мочи при смехе и чихании, ночные позывы к мочеиспусканию</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom27" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom27" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom27" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom27" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom27" value="4" class="radio-btn"></td>
+					</tr>
+					<tr>
+						<td>
+							<span data-lang="en">Unstable stool, decreased gastric secretion, atrophic gastritis, constipation</span>
+							<span data-lang="ru">Нестабильный стул, сниженная желудочная секреция, атрофический гастрит, запоры</span>
+						</td>
+						<td class="radio"><input type="radio" name="symptom28" value="0" class="radio-btn" required></td>
+						<td class="radio"><input type="radio" name="symptom28" value="1" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom28" value="2" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom28" value="3" class="radio-btn"></td>
+						<td class="radio"><input type="radio" name="symptom28" value="4" class="radio-btn"></td>
 					</tr>
 					<!-- Repeat the above block for all other symptoms from the document -->
 				</tbody>
