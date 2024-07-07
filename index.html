@@ -38,7 +38,7 @@
     	box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.4),
                 inset 0 2px 2px hsla(0,0%,100%,.4),
                 0 1px 1px hsla(0,0%,100%,.8),
-                0 0 2px 2px hsla(0,70%,70%,.4);
+                0 0 2px 2px rgba(160, 129, 129, 0.4);
 	}
 	form {
 		padding: 15px;
@@ -112,6 +112,9 @@
 		float: right;
 		margin: 10px;
 	}
+	.result {
+		margin: 30px;
+	}
 </style>
 	<script>
 		var language;
@@ -168,7 +171,7 @@
 				<h2 data-lang="en">Diagnosis of Iron Deficiency</h2>
 				<h2 data-lang="ru">Диагностика железодефицита</h2>
 			</div>
-			<table style="radio-container" cellpadding="0" cellspacing="0">
+			<table cellpadding="0" cellspacing="0">
 				<tbody>
 					<tr>
 						<td>
@@ -514,7 +517,10 @@
 			<div class="center" data-lang="ru">
 				<button type="submit" class="button">Результат</button>
 			</div>
-			<div id="result" class="center" style="margin-top: 20px;"></div>
+			<div id="result" class="center result"></div>
+			<br/>
+			<br/>
+			<br/>
 		</form>
 	</div>
 </body>
